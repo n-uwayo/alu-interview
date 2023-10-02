@@ -37,7 +37,3 @@ def rain(walls):
             total += max_right - walls[right]
 
     return total
-
-# Example usage:
-walls = [0, 1, 0, 2, 1, 0, 1, 3, 2, 1, 2, 1]
-print(rain(walls))
