@@ -12,17 +12,15 @@ def rain(walls):
         walls (list of int): A list of non-negative integers representing wall heights.
 
     Returns:
-        int: The total amount of water that can be retained between the walls.
+        int: The total amount of water that can be retained between the walls. Returns 0 for empty input.
 
     Example:
         >>> rain([0, 1, 0, 2, 1, 0, 1, 3, 2, 1, 2, 1])
         6
 
-    Raises:
-        ValueError: If the input 'walls' is empty.
     """
     if not walls:
-        raise ValueError("Input 'walls' should not be empty.")
+        return 0
 
     left, right = 0, len(walls) - 1
     max_left, max_right = walls[left], walls[right]
@@ -39,3 +37,7 @@ def rain(walls):
             total += max_right - walls[right]
 
     return total
+
+# Example usage:
+walls = [0, 1, 0, 2, 1, 0, 1, 3, 2, 1, 2, 1]
+print(rain(walls))
